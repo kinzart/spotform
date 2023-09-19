@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Apresentação</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #bed174;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+           
+            color: #bed174;
+            padding: 20px;
+         
+            margin: auto;
+          
+            position: relative;
+            margin-bottom: 4rem;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 4rem;
+            background-color: #fff;
+           
+            border-radius: 15px;
+        }
+        
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="file"] {
+            margin-top: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #bed174;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #97e404;
+        }
+
+
+        @media(max-width: 768px){
+
+            h1 {
+                width: 100%;
+                font-size: 32px;
+                margin: auto;
+                padding: 0;
+            top: 1rem;
+            margin-bottom: 4rem;
+        }
+
+
+            form {
+            max-width: 400px;
+            margin: 20px 1rem;
+            padding: 2rem 1rem;
+            text-align: center;
+            
+        }
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 80%;
+            margin: auto;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #bed174;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #97e404;
+        }
+        #bt-send{
+            margin: auto !important;
+            font-size: 20px;
+        }
+
+        }
+    </style>
+</head>
+<body>
+   
+    <form action="processar_formulario.php" method="POST" enctype="multipart/form-data">
+        <h1>Formulário de Apresentação</h1>
+        <label for="nome_artista">Nome do artista/banda:</label>
+        <input type="text" name="nome_artista" required>
+
+        <label for="titulo_apresentacao">Título da apresentação:</label>
+        <input type="text" name="titulo_apresentacao" required>
+
+        <label for="descricao_apresentacao">Breve Descrição da apresentação:</label>
+        <textarea name="descricao_apresentacao"></textarea>
+
+        <label for="generos">Gêneros:</label>
+        <input type="text" name="generos" required>
+
+        <label for="integrantes_ig">Marcação de todos integrantes no IG:</label>
+        <input type="text" name="integrantes_ig" required>
+
+        <label for="fotos_divulgacao">3 Fotos p/ divulgar (PNG ou JPG):</label>
+        <input type="file" name="fotos_divulgacao[]" accept=".png, .jpg" multiple required>
+
+        <label style="margin-top:2rem" for="orcamento_final">Orçamento final:</label>
+        <input type="number" name="orcamento_final" required>
+
+        <input id="bt-send" type="submit" value="Enviar">
+    </form>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Apresentações</title>
+    <style>
+        /* Estilo para a coluna de imagem */
+th:nth-child(1), td:nth-child(1) {
+    text-align: center;
+}
+
+/* Estilo para a imagem */
+img {
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: middle;
+}
+
+        /* Estilos para a tabela */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        /* Estilos para o cabeçalho da tabela */
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Lista de Apresentações</h1>
+    <div id="lista-apresentacoes">
+        <!-- Os dados da tabela serão carregados aqui via JavaScript -->
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "listar_dados.php",
+                method: "GET",
+                dataType: "html",
+                success: function (data) {
+                    $("#lista-apresentacoes").html(data);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
