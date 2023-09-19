@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "nova_senha";
-$dbname = "artist_form";
+$username = "u906429557_kinzart";
+$password = "0Mp#UZ>7>!ebc2t16780o1";
+$dbname = "u906429557_formspot";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
