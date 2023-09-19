@@ -41,7 +41,7 @@ $sql = "INSERT INTO apresentacoes (nome_artista, titulo_apresentacao, descricao_
         VALUES ('$nome_artista', '$titulo_apresentacao', '$descricao_apresentacao', '$generos', '$integrantes_ig', '$caminhos_imagens_json', '$orcamento_final')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Dados inseridos com sucesso!";
+    echo "Dados inseridos com sucesso! (trocar url)";
 } else {
     echo "Erro ao inserir dados: " . $conn->error;
 }
