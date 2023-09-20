@@ -24,7 +24,9 @@ if ($result->num_rows > 0) {
         if (!empty($caminhos_imagens)) {
             // Suponha que você deseje exibir a primeira imagem da lista
             for ($i = 0; $i < min(3, count($caminhos_imagens)); $i++) {
+                echo "<tr>";
                 echo "<td><a href='" . $caminhos_imagens[$i] . "' download><img src='" . $caminhos_imagens[$i] . "' width='100' height='100'</a> </td>";
+                echo "<tr>";
             }
         } else {
             echo "<td>Nenhuma imagem disponível</td>";
