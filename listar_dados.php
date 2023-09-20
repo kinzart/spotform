@@ -15,7 +15,7 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     echo "<table>";
-    echo "<tr><th>Imagem</th><th>Imagem</th><th>Imagem</th><th>Nome do Artista</th><th>Título da Apresentação</th><th>Descrição</th><th>Gêneros</th><th>Integrantes no IG</th><th>Orçamento Final</th></tr>";
+    echo "<tr><th>Imagem 1</th><th>Imagem 2</th><th>Imagem 3</th><th>Nome do Artista</th><th>Título da Apresentação</th><th>Descrição</th><th>Gêneros</th><th>Integrantes no IG</th><th>Orçamento Final</th></tr>";
     while ($row = $result->fetch_assoc()) {
         echo "<tr>";
         // Decodifique o JSON para obter os caminhos das imagens
