@@ -15,6 +15,7 @@
                     type: "POST",
                     data: $(this).serialize(),
                     success: function(response) {
+                        $("#success-message").show(); 
                         $("#last-section").show(); // Exibe a sessão
                         $("html, body").animate({
                             scrollTop: $("#last-section").offset().top // Rola a página até a sessão
@@ -90,7 +91,21 @@
         input[type="submit"]:hover {
             background-color: #97e404;
         }
+        #last-section{
+            margin: auto;
+            text-align: center;
+            display: none;
 
+        }
+        .img1{
+            border-radius: 15px;
+            border: #151515 solid 10px;
+        }
+        #success-message{
+            display:none;
+            text-align: center;
+            margin: auto;
+        }
 
         @media(max-width: 768px){
 
@@ -140,18 +155,13 @@
             border-radius: 1px;
         }
 
-        }
-
-        #last-section{
-            margin: auto;
-            text-align: center;
-            display: none;
-
-        }
         .img1{
-            border-radius: 15px;
-            border: #151515 solid 10px;
+            width: 90%;
         }
+
+        }
+
+       
     </style>
 </head>
 <body>
@@ -181,7 +191,10 @@
 
         <input id="bt-send" type="submit" value="Enviar">
     </form>
-
+    <div id="success-message">
+        <h4>Sua apresentação foi cadastrada com sucesso!</h4>
+        <p>Agora só mais um detalhe importante, atente-se ao nosso rider tecnico:</p>
+    </div>
     <section id="last-section">
         <div>
         <img src="./assets/rider/1.jpg" alt="" width="700px" class="img1">
