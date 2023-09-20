@@ -41,7 +41,7 @@ $sql = "INSERT INTO apresentacoes (nome_artista, titulo_apresentacao, descricao_
         VALUES ('$nome_artista', '$titulo_apresentacao', '$descricao_apresentacao', '$generos', '$integrantes_ig', '$caminhos_imagens_json', '$orcamento_final')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Dados inseridos com sucesso! (trocar url)";
+  
     echo "<script>";
     echo "document.getElementById('last-section').style.display = 'block';"; // Mostrar a sessão
     echo "window.location.hash = 'last-section';"; // Rolando para a sessão
