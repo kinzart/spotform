@@ -7,6 +7,12 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
+
+     // Função para fechar o modal
+     function closePopup() {
+                $("#modal").hide();
+            }
+
             $("#seu-formulario").submit(function(e) {
                 e.preventDefault(); // Impede o envio padrão do formulário
 
@@ -27,7 +33,11 @@
                     }
                 });
             });
+            $("#close-modal").click(closePopup);
+            $("#ler-rider").click(closePopup);
         });
+      
+        
     </script>
     <style>
         body {
@@ -102,6 +112,7 @@
             border: #151515 solid 10px;
         }
         #success-message{
+        
             text-align: center;
             margin: auto;
         }
@@ -112,8 +123,8 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 80%;
-            height: 80%;
+            width: 100%;
+            height: 100%;
             background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro semitransparente */
             z-index: 9999; /* Garante que o modal esteja acima de outros elementos */
         }
@@ -132,6 +143,13 @@
 
         #success-message h4 {
             margin-top: 0; /* Remove o espaço superior padrão */
+        }
+          /* Estilos para o botão de fechar */
+          .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
         }
 
         @media(max-width: 768px){
@@ -220,9 +238,11 @@
     </form>
     <div id="modal">
         <div id="modal-content">
+            <span class="close-button" id="close-modal">&times;</span>
             <div id="success-message">
                 <h4>Sua apresentação foi cadastrada com sucesso!</h4>
                 <p>Agora só mais um detalhe importante, atente-se ao nosso rider técnico:</p>
+                <button id="ler-rider">Ler o rider</button>
             </div>
         </div>
     </div>
