@@ -15,7 +15,7 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     echo "<table>";
-    echo "<tr><th>Imagem</th><th>Nome do Artista</th><th>Título da Apresentação</th><th>Descrição</th><th>Gêneros</th><th>Integrantes no IG</th><th>Orçamento Final</th></tr>";
+    echo "<tr><th>Imagem</th></tr>";
     while ($row = $result->fetch_assoc()) {
         echo "<tr>";
         // Decodifique o JSON para obter os caminhos das imagens
@@ -24,14 +24,13 @@ if ($result->num_rows > 0) {
         if (!empty($caminhos_imagens)) {
             // Suponha que você deseje exibir a primeira imagem da lista
             for ($i = 0; $i < min(3, count($caminhos_imagens)); $i++) {
-                echo "<tr>";
                 echo "<td><a href='" . $caminhos_imagens[$i] . "' download><img src='" . $caminhos_imagens[$i] . "' width='100' height='100'</a> </td>";
-                echo "<tr>";
+          
             }
         } else {
             echo "<td>Nenhuma imagem disponível</td>";
         }
-        
+       echo"<tr><th>Nome do Artista</th><th>Título da Apresentação</th><th>Descrição</th><th>Gêneros</th><th>Integrantes no IG</th><th>Orçamento Final</th></tr>""
 
 
 
