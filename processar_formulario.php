@@ -42,9 +42,13 @@ $sql = "INSERT INTO apresentacoes (nome_artista, titulo_apresentacao, descricao_
 
 if ($conn->query($sql) === TRUE) {
     echo "Dados inseridos com sucesso! (trocar url)";
+    echo "<script>";
+    echo "document.getElementById('last-section').style.display = 'block';"; // Mostrar a sessão
+    echo "window.location.hash = 'last-section';"; // Rolando para a sessão
+    echo "</script>";
 } else {
     echo "Erro ao inserir dados: " . $conn->error;
-}
 
+}
 $conn->close();
 ?>
