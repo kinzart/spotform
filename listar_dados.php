@@ -22,13 +22,20 @@ if ($result->num_rows > 0) {
         $caminhos_imagens = json_decode($row["fotos_divulgacao"]);
 
         if (!empty($caminhos_imagens)) {
-            // Suponha que você deseje exibir a primeira imagem da lista
-            for ($i = 0; $i < min(3, count($caminhos_imagens)); $i++) {
-                echo "<td><a href='" . $caminhos_imagens[$i] . "' download><img src='" . $caminhos_imagens[$i] . "' width='100' height='100'</a> </td>";
+            // Suponha que você deseje exibir as três primeiras imagens da lista
+            for ($i = 0; $i < 3; $i++) {
+                echo "<td>";
+                if (isset($caminhos_imagens[$i]) && !empty($caminhos_imagens[$i])) {
+                    echo "<a href='" . $caminhos_imagens[$i] . "' download><img src='" . $caminhos_imagens[$i] . "' width='100' height='100'></a>";
+                } else {
+                    echo "IMAGEM HERE";
+                }
+                echo "</td>";
             }
         } else {
-            echo "<td>Nenhuma imagem disponível</td>";
+            echo "<td colspan='3'>Nenhuma imagem disponível</td>";
         }
+        
         
 
 
