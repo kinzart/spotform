@@ -102,14 +102,24 @@
             border: #151515 solid 10px;
         }
         #success-message{
-            display:none;
             text-align: center;
             margin: auto;
         }
 
-        #modal {
+   /* Estilos para o modal */
+   #modal {
             display: none;
             position: fixed;
+            top: 0;
+            left: 0;
+            width: 80%;
+            height: 80%;
+            background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro semitransparente */
+            z-index: 9999; /* Garante que o modal esteja acima de outros elementos */
+        }
+
+        #modal-content {
+            position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -117,6 +127,11 @@
             padding: 20px;
             border: 1px solid #ccc;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center; /* Centraliza o texto horizontalmente */
+        }
+
+        #success-message h4 {
+            margin-top: 0; /* Remove o espaço superior padrão */
         }
 
         @media(max-width: 768px){
@@ -204,9 +219,11 @@
         <input id="bt-send" type="submit" value="Enviar">
     </form>
     <div id="modal">
-        <div id="success-message">
-            <h2>Sua apresentação foi cadastrada com sucesso!</h2>
-            <p>Agora só mais um detalhe importante, atente-se ao nosso rider tecnico:</p>
+        <div id="modal-content">
+            <div id="success-message">
+                <h4>Sua apresentação foi cadastrada com sucesso!</h4>
+                <p>Agora só mais um detalhe importante, atente-se ao nosso rider técnico:</p>
+            </div>
         </div>
     </div>
     <section id="last-section">
