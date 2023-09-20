@@ -15,7 +15,7 @@
                     type: "POST",
                     data: $(this).serialize(),
                     success: function(response) {
-                        $("#success-message").show(); 
+                        $("#modal").show(); 
                         $("#last-section").show(); // Exibe a sessão
                         $("html, body").animate({
                             scrollTop: $("#last-section").offset().top // Rola a página até a sessão
@@ -107,6 +107,18 @@
             margin: auto;
         }
 
+        #modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
         @media(max-width: 768px){
 
             h1 {
@@ -166,7 +178,7 @@
 </head>
 <body>
    
-    <form id="seu-formulario" action="" method="POST">
+    <form id="seu-formulario" action="" method="POST" enctype="multipart/form-data">
         <h1>Formulário de Apresentação</h1>
         <label for="nome_artista">Nome do artista/banda:</label>
         <input type="text" name="nome_artista" required>
@@ -191,9 +203,11 @@
 
         <input id="bt-send" type="submit" value="Enviar">
     </form>
-    <div id="success-message">
-        <h4>Sua apresentação foi cadastrada com sucesso!</h4>
-        <p>Agora só mais um detalhe importante, atente-se ao nosso rider tecnico:</p>
+    <div id="modal">
+        <div id="success-message">
+            <h2>Sua apresentação foi cadastrada com sucesso!</h2>
+            <p>Agora só mais um detalhe importante, atente-se ao nosso rider tecnico:</p>
+        </div>
     </div>
     <section id="last-section">
         <div>
