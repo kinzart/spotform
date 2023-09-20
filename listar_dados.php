@@ -30,7 +30,7 @@ if ($result->num_rows > 0) {
         } else {
             echo "<td>Nenhuma imagem disponível</td>";
         }
-       echo"<tr><th>Nome do Artista</th><th>Título da Apresentação</th><th>Descrição</th><th>Gêneros</th><th>Integrantes no IG</th><th>Orçamento Final</th></tr>""
+       echo"<tr><th>Nome dos Artista</th><th>Título da Apresentação</th><th>Descrição</th><th>Gêneros</th><th>Integrantes no IG</th><th>Orçamento Final</th></tr>""
 
 
 
