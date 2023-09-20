@@ -28,7 +28,7 @@ if ($result->num_rows > 0) {
                 if (isset($caminhos_imagens[$i]) && !empty($caminhos_imagens[$i])) {
                     echo "<a href='" . $caminhos_imagens[$i] . "' download><img src='" . $caminhos_imagens[$i] . "' width='100' height='100'></a>";
                 } else {
-                    echo "IMAGEM HERE";
+                    echo "Sem IMG";
                 }
                 echo "</td>";
             }
