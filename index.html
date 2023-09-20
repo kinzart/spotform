@@ -4,6 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de Apresentação</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#seu-formulario").submit(function(e) {
+                e.preventDefault(); // Impede o envio padrão do formulário
+
+                $.ajax({
+                    url: "processar_formulario.php", // Altere para o URL do seu script PHP
+                    type: "POST",
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        $("#last-section").show(); // Exibe a sessão
+                        $("html, body").animate({
+                            scrollTop: $("#last-section").offset().top // Rola a página até a sessão
+                        }, 1000); // Tempo de animação em milissegundos
+                        $("#mensagem").html(response); // Exibe a mensagem de sucesso ou erro
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+            });
+        });
+    </script>
     <style>
         body {
             font-family: Arial, sans-serif;
