@@ -1,19 +1,4 @@
 
-document.getElementById("orcamento_final").addEventListener("input", function() {
-    var valorInserido = parseInt(this.value);
-
-    if (isNaN(valorInserido)) {
-        // Se o valor inserido não for um número, exibe uma mensagem de erro
-        this.setCustomValidity("Insira um número válido.");
-    } else if (valorInserido < 100 || valorInserido > 2000) {
-        // Se o valor inserido estiver fora do intervalo desejado, exibe uma mensagem de erro
-        this.setCustomValidity("O valor deve estar entre 100 e 2000.");
-    } else {
-        // Se o valor estiver dentro do intervalo, não há erro
-        this.setCustomValidity("");
-    }
-});
-
 
 $(document).ready(function() {
     // Função para fechar o modal
