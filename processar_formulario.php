@@ -28,7 +28,7 @@ foreach ($_FILES['fotos_divulgacao']['tmp_name'] as $key => $tmp_name) {
     if (move_uploaded_file($tmp_name, $caminho_destino)) {
         $caminhos_imagens[] = $caminho_destino;
     } else {
-        echo "<script>console.log("Erro ao fazer upload da imagem $nome_arquivo.")</script>";
+        echo "Erro ao fazer upload da imagem $nome_arquivo.";
     }
 }
 
