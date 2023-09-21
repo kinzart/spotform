@@ -23,14 +23,19 @@ $(document).ready(function() {
 
     $("#form-spot").submit(function(e) {
         e.preventDefault(); // Impede o envio padrão do formulário
-        var form = $('#form-spot')[0]; 
-        var formData = new FormData(form);
-        console.log(formData)
+
+        var formData = new FormData(this);
+        // Para enviar o array de imagens corretamente
+        var imageInput = document.querySelector('input[type="file"]');
+        var images = imageInput.files;
+
+        for (var i = 0; i < images.length; i++) {
+            formData.append('fotos_divulgacao[]', images[i]);
+        }
         $.ajax({
             url: "processar_formulario.php", // Altere para o URL do seu script PHP
             type: "POST",
             data: formData,
-            enctype:'multipart/form-data',
             processData: false,  // Evita o processamento automático dos dados
             contentType: false,  // Evita o cabeçalho "Content-Type" padrão
             success: function(response) {
