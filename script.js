@@ -71,11 +71,13 @@ $(document).ready(function() {
         
             error: function(error) {
                 console.log(error);
-            }
-            
+            },
+            cache: false, // Desativa o cache do navegador
+            contentType: false, // Evita o cabeçalho "Content-Type" padrão
+            processData: false // Evita o processamento automático dos dados
         });
-    },
-       
+    });
+
     $("#close-modal").click(closePopup);
     $("#ler-rider").click(closePopup);
 });
