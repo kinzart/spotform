@@ -8,24 +8,28 @@
     <script>
 
 document.addEventListener("DOMContentLoaded", function() {
-    var inputOrcamento = document.getElementById("input-orcamento");
+    var inputOrcamentoVisual = document.getElementById("input-orcamento-visual");
+    var inputOrcamentoHidden = document.getElementById("input-orcamento-hidden");
 
     // Função para formatar o valor em reais (R$)
     function formatarValor(valor) {
         return "R$ " + parseFloat(valor).toFixed(2);
     }
 
-    inputOrcamento.addEventListener("input", function() {
+    inputOrcamentoVisual.addEventListener("input", function() {
         // Remove caracteres não numéricos, exceto o ponto decimal
         var valorNumerico = this.value.replace(/[^0-9.]/g, '');
 
-        // Atualiza o valor formatado no campo de entrada
+        // Atualiza o valor formatado no campo visual
         this.value = formatarValor(valorNumerico);
+
+        // Atualiza o valor oculto (hidden) com o número real
+        inputOrcamentoHidden.value = valorNumerico;
     });
 
     // Formate o valor inicial (se houver) quando a página for carregada
-    if (inputOrcamento.value) {
-        inputOrcamento.value = formatarValor(inputOrcamento.value);
+    if (inputOrcamentoHidden.value) {
+        inputOrcamentoVisual.value = formatarValor(inputOrcamentoHidden.value);
     }
 });
 
@@ -287,7 +291,9 @@ document.addEventListener("DOMContentLoaded", function() {
         <input type="file" name="fotos_divulgacao[]" accept=".png, .jpg" multiple required>
 
         <label style="margin-top:2rem" for="orcamento_final">Valor da apresentação:</label>
-        <input type="number" name="orcamento_final" id="input-orcamento" required>
+        <input type="text" id="input-orcamento-visual" required>
+<input type="hidden" name="orcamento_final" id="input-orcamento-hidden" required>
+
 
         <input id="bt-send" type="submit" value="Enviar">
     </form>
