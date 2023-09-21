@@ -30,6 +30,7 @@ $(document).ready(function() {
             url: "processar_formulario.php", // Altere para o URL do seu script PHP
             type: "POST",
             data: formData,
+            enctype:'multipart/form-data',
             processData: false,  // Evita o processamento automático dos dados
             contentType: false,  // Evita o cabeçalho "Content-Type" padrão
             success: function(response) {
@@ -40,6 +41,7 @@ $(document).ready(function() {
                 }, 1000); // Tempo de animação em milissegundos
                 $("#form-spot :input").prop("disabled", true);
                 $("#mensagem").html(response); // Exibe a mensagem de sucesso ou erro
+                console.log("formulario enviado")
             },
             error: function(error) {
                 console.log(error);
