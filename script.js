@@ -25,13 +25,18 @@ $(document).ready(function() {
         e.preventDefault(); // Impede o envio padrão do formulário
 
         var formData = new FormData(this);
-        // Para enviar o array de imagens corretamente
-        var imageInput = document.querySelector('input[type="file"]');
-        var images = imageInput.files;
+   // Adicione as imagens ao FormData corretamente
+   var imageInputs = document.querySelectorAll('input[type="file"]');
+   for (var i = 0; i < imageInputs.length; i++) {
+       var fileInput = imageInputs[i];
+       var files = fileInput.files;
+       for (var j = 0; j < files.length; j++) {
+           formData.append('fotos_divulgacao[]', files[j]);
+       }
+   }
 
-        for (var i = 0; i < images.length; i++) {
-            formData.append('fotos_divulgacao[]', images[i]);
-        }
+   console.log(formData);
+   
         $.ajax({
             url: "processar_formulario.php", // Altere para o URL do seu script PHP
             type: "POST",
