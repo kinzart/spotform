@@ -116,6 +116,9 @@
             text-align: center;
             margin: auto;
         }
+        #success-message h3{
+            color:#bed174 ;
+        }
 
    /* Estilos para o modal */
    #modal {
@@ -134,7 +137,8 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background-color: #fff;
+            background-color: #ffffff;
+            border-radius: 15px;
             padding: 20px;
             border: 1px solid #ccc;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -147,26 +151,31 @@
           /* Estilos para o botão de fechar */
           .close-button {
             position: absolute;
-            top: 10px;
+            top: 0px;
             right: 10px;
             cursor: pointer;
+            font-size: 2.5rem;
         }
 
-        button#btn-confirmar {
-    position: relative;
-    color: #000;
-    bottom: 17rem;
-    font-size: 17px;
-    background: #bed174;
-    padding: 1rem;
-    border-radius: 40px;
+        button#download-pdf {
+            position: relative;
+            color: #000;
+            bottom: 17rem;
+            font-size: 22px;
+            background: #bed174;
+            padding: 1rem;
+            cursor: pointer;
+            border-radius: 40px;
 }
 #ler-rider{
 
-    font-size: 10px;
-    background: #bed174;
-    padding: 1rem;
-    border-radius: 40px;
+    margin: 1rem;
+    font-size: 15px;
+    color: #000;
+    padding: 6px;
+    border-radius: 6px;
+    border: solid 1px #000;
+    cursor: pointer;
 }
 
         @media(max-width: 768px){
@@ -220,7 +229,7 @@
         .img1{
             width: 90%;
         }
-        #btn-confirmar{
+        button#download-pdf{
             bottom: 10rem;
     font-size: 10px;
         }
@@ -261,7 +270,7 @@
         <div id="modal-content">
             <span class="close-button" id="close-modal">&times;</span>
             <div id="success-message">
-                <h4>Sua apresentação foi cadastrada com sucesso!</h4>
+                <h3>Sua apresentação foi cadastrada com sucesso!</h3>
                 <p>Agora só mais um detalhe importante, atente-se ao nosso rider técnico:</p>
                 <button id="ler-rider" >Ler o rider</button>
             </div>
@@ -274,7 +283,9 @@
         <img src="./assets/rider/3.jpg" alt="" width="700px" class="img1">
         <img src="./assets/rider/4.jpg" alt="" width="700px" class="img1">
         <img src="./assets/rider/5.jpg" alt="" width="700px" class="img1">
-        <button class="btn-confirmar">Fazer download do rider</button>
+        <a href="./assets/pdf/Rider-Spotmarkt.pdf" download>
+            <button id="download-pdf">Download</button>
+        </a>
         </div>
     </section>
 </body>
