@@ -23,8 +23,8 @@ $(document).ready(function() {
 
     $("#form-spot").submit(function(e) {
         e.preventDefault(); // Impede o envio padrão do formulário
-
-        var formData = new FormData(this);
+        var form = $('#form-spot')[0]; 
+        var formData = new FormData(form);
         console.log(formData)
         $.ajax({
             url: "processar_formulario.php", // Altere para o URL do seu script PHP
