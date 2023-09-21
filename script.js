@@ -72,8 +72,9 @@ $(document).ready(function() {
             error: function(error) {
                 console.log(error);
             }
+            
         });
-        
+    },
        
     $("#close-modal").click(closePopup);
     $("#ler-rider").click(closePopup);
