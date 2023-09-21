@@ -6,17 +6,22 @@
     <title>Formulário de Apresentação</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+
+document.addEventListener("DOMContentLoaded", function() {
+    var inputOrcamento = document.getElementById("input-orcamento");
+
+    inputOrcamento.addEventListener("input", function() {
+        // Remove caracteres não numéricos, exceto o ponto decimal
+        var valorFormatado = this.value.replace(/[^0-9.]/g, '');
+
+        // Atualiza o valor no campo de entrada
+        this.value = valorFormatado;
+    });
+});
+
+
         $(document).ready(function() {
             
-            var inputOrcamento = document.getElementById("input-orcamento");
-
-inputOrcamento.addEventListener("input", function() {
-    // Remove caracteres não numéricos, exceto o ponto decimal
-    var valorFormatado = this.value.replace(/[^0-9.]/g, '');
-
-    // Atualiza o valor no campo de entrada
-    this.value = valorFormatado;
-});
      // Função para fechar o modal
      function closePopup() {
                 $("#modal").hide();
