@@ -44,15 +44,31 @@ $(document).ready(function() {
             processData: false,  // Evita o processamento automático dos dados
             contentType: false,  // Evita o cabeçalho "Content-Type" padrão
             success: function(response) {
-                $("#modal").show();
-                $("#last-section").show(); // Exibe a sessão
-                $("html, body").animate({
-                    scrollTop: $("#last-section").offset().top // Rola a página até a sessão
-                }, 1000); // Tempo de animação em milissegundos
-                $("#form-spot :input").prop("disabled", true);
-                $("#mensagem").html(response); // Exibe a mensagem de sucesso ou erro
-                console.log("formulario enviado")
+                if (response.success) {
+                    // Sucesso - exibir mensagem de sucesso para o usuário
+                    $("#modal").show();
+                    $("#last-section").show();
+                    $("html, body").animate({
+                        scrollTop: $("#last-section").offset().top
+                    }, 1000);
+                    $("#form-spot :input").prop("disabled", true);
+                    $("#mensagem").html(response.message); // Exibe a mensagem de sucesso
+                    console.log("Formulário enviado com sucesso");
+                } else {
+                    // Erro - exibir mensagem de erro para o usuário
+                    $("#mensagem").html(response.message); // Exibe a mensagem de erro
+                    if (response.errors && response.errors.length > 0) {
+                        // Se houver detalhes de erros, exiba-os
+                        var errorList = "<ul>";
+                        for (var i = 0; i < response.errors.length; i++) {
+                            errorList += "<li>" + response.errors[i] + "</li>";
+                        }
+                        errorList += "</ul>";
+                        $("#mensagem").append(errorList);
+                    }
+                }
             },
+        
             error: function(error) {
                 console.log(error);
             }

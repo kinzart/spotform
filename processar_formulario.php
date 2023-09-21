@@ -1,4 +1,6 @@
 <?php
+header('Content-Type: application/json');
+
 $servername = "localhost";
 $username = "u906429557_kinzart";
 $password = "0Mp#UZ>7>!ebc2t16780o1";
