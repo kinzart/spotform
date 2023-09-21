@@ -73,8 +73,8 @@ $(document).ready(function() {
                 console.log(error);
             }
         });
-    });
-
+        
+       
     $("#close-modal").click(closePopup);
     $("#ler-rider").click(closePopup);
 });
