@@ -25,7 +25,7 @@ $(document).ready(function() {
         e.preventDefault(); // Impede o envio padrão do formulário
 
         var formData = new FormData(this);
-
+        console.log(formData)
         $.ajax({
             url: "processar_formulario.php", // Altere para o URL do seu script PHP
             type: "POST",
