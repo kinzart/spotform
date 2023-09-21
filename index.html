@@ -13,7 +13,7 @@
                 $("#modal").hide();
             }
 
-            $("#seu-formulario").submit(function(e) {
+            $("#form-spot").submit(function(e) {
                 e.preventDefault(); // Impede o envio padrão do formulário
 
                 $.ajax({
@@ -26,6 +26,7 @@
                         $("html, body").animate({
                             scrollTop: $("#last-section").offset().top // Rola a página até a sessão
                         }, 1000); // Tempo de animação em milissegundos
+                        $("#form-spot :input").prop("disabled", true);
                         $("#mensagem").html(response); // Exibe a mensagem de sucesso ou erro
                     },
                     error: function(error) {
@@ -241,7 +242,7 @@
 </head>
 <body>
    
-    <form id="seu-formulario" action="" method="POST" enctype="multipart/form-data">
+    <form id="form-spot" action="" method="POST" enctype="multipart/form-data">
         <h1>Formulário de Apresentação</h1>
         <label for="nome_artista">Nome do artista/banda:</label>
         <input type="text" name="nome_artista" required>
