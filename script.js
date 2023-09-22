@@ -8,7 +8,7 @@ $(document).ready(function() {
 
     $("#form-spot").submit(function(e) {
         e.preventDefault(); // Impede o envio padrão do formulário
-
+        console.log('enviando form')
         var formData = new FormData(this);
 
         // Adicione as imagens ao FormData corretamente
